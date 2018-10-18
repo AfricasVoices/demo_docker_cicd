@@ -13,8 +13,11 @@ jobs:
           name: Build docker image
           command: docker build -t "demo-image" .
       - run:
-          name: Create docker image and run tests
-          command: docker container create --name "demo-container"  -w "/app" "demo-image" pipenv run pytest
+          name: Create docker image
+          command: docker container create --name "demo-container"  -w "/app"
+      - run:
+          name: Run tests
+          command: docker start -a demo-container
       - run:
           name: Copy test results
           command: |
