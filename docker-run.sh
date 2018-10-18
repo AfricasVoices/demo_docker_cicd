@@ -2,8 +2,8 @@
 
 set -e # Stop on errors
 
-IMAGE_NAME=test-image
-CONTAINER_NAME=test-container
+IMAGE_NAME=demo-image
+CONTAINER_NAME=demo-container
 
 # Build an image for this pipeline stage.
 docker build -t "$IMAGE_NAME" .
