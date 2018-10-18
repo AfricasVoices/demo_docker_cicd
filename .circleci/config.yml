@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - test
     docker:
       - image: docker:18.03.0-ce-git
     steps:
